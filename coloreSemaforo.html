@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores del semaforo</title>
+</head>
+<body>
+    <h1>Colores del semaforo</h1>
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+        function dibujarCuadrados(x,y,color){
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+            pincel.fillStyle = color;
+            pincel.fillRect(x,y,50,50);
+            pincel.strokeRect(x,y,50,50);
+        }
+
+        /*Bucle while
+        var x = 0;
+
+        while(x < 600){
+            dibujarCuadrados(x,50,"red");
+            dibujarCuadrados(x,100,"red");
+            dibujarCuadrados(x,150,"red");
+            x = x + 50;
+        }*/
+
+        //Bucle for
+        for(var x = 0; x < 600; x = x + 50){
+            dibujarCuadrados(x,50,"red");
+            dibujarCuadrados(x,100,"yellow");
+            dibujarCuadrados(x,150,"green");
+        }
+
+        /*CTAF Call To Action Function
+        dibujarCuadrados(0,50,"red");
+        dibujarCuadrados(0,100,"yellow");
+        dibujarCuadrados(0,150,"green");
+
+        dibujarCuadrados(50,50,"red");
+        dibujarCuadrados(50,100,"yellow");
+        dibujarCuadrados(50,150,"green");
+        
+        dibujarCuadrados(100,50,"red");
+        dibujarCuadrados(100,100,"yellow");
+        dibujarCuadrados(100,150,"green");*/
+    </script>
+</body>
+</html>
